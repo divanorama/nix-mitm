@@ -9,7 +9,7 @@
 2. Map known network dependencies to hermetic files via [addon](https://github.com/divanorama/mitmproxy_addons/blob/main/maplocal2.py) similar to [map\_local](https://docs.mitmproxy.org/stable/overview-features/#map-local)
 3. To update/create dependencies use mitmproxy outside of build sandbox, and analyze its dump
 4. This does not prevent simultaneous use of more efficient ways to supply provided/cached dependencies specific to a given build tool
-5. It's possible to have some more complex proxy script logic like ignoring some of request parameters for example
+5. It's possible to have some more complex proxy script logic like ignoring some of request parameters, special handling for cache control headers etc
 
 ### Current limitations
 1. Each url is converted to a separate fetchurl derivation
