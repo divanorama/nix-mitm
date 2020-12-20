@@ -59,7 +59,7 @@ nameFromURL = url:
   let
     components = pkgs.lib.splitString "/" url;
     filename = pkgs.lib.last components;
-  in builtins.replaceStrings ["~" "&" "%"] ["_" "_" "_"] (builtins.substring 0 (pkgs.lib.min 207 (builtins.stringLength filename)) filename);
+  in builtins.replaceStrings ["~" "&" "%" "@"] ["_" "_" "_" "_"] (builtins.substring 0 (pkgs.lib.min 207 (builtins.stringLength filename)) filename);
 
 # Run mitmdump on recorded flow, with args="-s ${dumpscript}" will print urls and checksums to stdout
 processdump = {args, dump}: ''HOME="$(mktemp -d)" "${pkgs.mitmproxy}"/bin/mitmdump -r "$dump" -n ${args}'';
